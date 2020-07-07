@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnTextView;
     private Button mBtnButton;
     private Button mBtnEdit;
+    private Button mBtnRadioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,37 +21,52 @@ public class MainActivity extends AppCompatActivity {
 
         //textview 点击跳转演示
         mBtnTextView = (Button) findViewById(R.id.btn_textview);
-        mBtnTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 跳转到textview演示页面
-                Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
-                startActivity(intent);
-
-            }
-        });
 
         //button 点击跳转演示
         mBtnButton = (Button) findViewById(R.id.btn_button);
-        mBtnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 跳转到button演示页面
-                Intent intent = new Intent(MainActivity.this,ButtonActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        //button 点击跳转演示
+        //Editbutton 演示
         mBtnEdit = (Button) findViewById(R.id.btn_edittext);
-        mBtnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 跳转到btn_edittext演示页面
-                Intent intent = new Intent(MainActivity.this, EditTextActivity.class);
-                startActivity(intent);
-            }
-        });
 
+        //RadioButton演示
+        mBtnRadioButton = (Button) findViewById(R.id.btn_radiobutton);
+
+        setListeners();
+
+    }
+
+    private void setListeners(){
+        Onclick onclick = new Onclick();
+        mBtnRadioButton.setOnClickListener(onclick);
+        mBtnTextView.setOnClickListener(onclick);
+        mBtnEdit.setOnClickListener(onclick);
+        mBtnButton.setOnClickListener(onclick);
+    }
+
+    private class Onclick implements View.OnClickListener{
+        @Override
+        public void onClick(View view) {
+            Intent intent = null;
+            switch (view.getId()){
+                case R.id.btn_textview:
+                    intent = new Intent(MainActivity.this,TextViewActivity.class);
+                    break;
+
+                case R.id.btn_button:
+                    intent = new Intent(MainActivity.this,ButtonActivity.class);
+                    break;
+
+                case R.id.btn_edittext:
+                    intent = new Intent(MainActivity.this,EditTextActivity.class);
+                    break;
+
+                case R.id.btn_radiobutton:
+                    intent = new Intent(MainActivity.this,RadioButtonActivity.class);
+                    break;
+
+
+            }
+            startActivity(intent);
+        }
     }
 }

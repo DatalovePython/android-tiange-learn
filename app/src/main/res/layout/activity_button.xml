@@ -54,7 +54,7 @@
         android:text="按钮4"
         android:textSize="32sp"
         android:textColor="#FF0000"
-        android:background="@drawable/bg_btn4"
+        android:background="@drawable/selector_orange"
         android:layout_below="@id/btn_3"
         android:layout_marginTop="10dp"
         android:onClick="showToast"
