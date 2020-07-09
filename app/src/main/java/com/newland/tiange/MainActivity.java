@@ -1,11 +1,15 @@
 package com.newland.tiange;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.newland.tiange.recyclerview.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnRadioButton;
     private Button mBtnCheckBox;
     private Button mBtnImageView;
+    private Button mRV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         mBtnImageView = (Button) findViewById(R.id.btn_imageview);
 
+        mRV = (Button) findViewById(R.id.btn_recyclerview);
+
         setListeners();
 
     }
@@ -49,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnButton.setOnClickListener(onclick);
         mBtnCheckBox.setOnClickListener(onclick);
         mBtnImageView.setOnClickListener(onclick);
+        mRV.setOnClickListener(onclick);
     }
 
     private class Onclick implements View.OnClickListener{
@@ -78,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.btn_imageview:
                     intent = new Intent(MainActivity.this,ImageViewActivity.class);
+                    break;
+
+                case R.id.btn_recyclerview:
+                    intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                     break;
 
             }
