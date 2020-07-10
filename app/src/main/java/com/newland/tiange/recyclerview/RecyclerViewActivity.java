@@ -15,6 +15,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private Button mBtnLinear;
     private Button mBtnHor;
     private Button mBtnGrid;
+    private Button mBtnPu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +38,20 @@ public class RecyclerViewActivity extends AppCompatActivity {
             }
         });
 
-        mBtnHor = (Button) findViewById(R.id.btn_grid);
-        mBtnHor.setOnClickListener(new View.OnClickListener() {
+        mBtnGrid = (Button) findViewById(R.id.btn_grid);
+        mBtnGrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RecyclerViewActivity.this, GridRecyclerViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mBtnPu = (Button) findViewById(R.id.btn_pu);
+        mBtnPu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RecyclerViewActivity.this, PuRecyclerViewActivity.class);
                 startActivity(intent);
             }
         });

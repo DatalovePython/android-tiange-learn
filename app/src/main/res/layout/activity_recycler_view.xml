@@ -27,4 +27,12 @@
         android:text="网格视图">
 
     </Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_pu"
+        android:text="瀑布视图">
+
+    </Button>
 </LinearLayout>
