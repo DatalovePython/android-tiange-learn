@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnCheckBox;
     private Button mBtnImageView;
     private Button mRV;
+    private Button mBtnWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +45,13 @@ public class MainActivity extends AppCompatActivity {
 
         mRV = (Button) findViewById(R.id.btn_recyclerview);
 
+        mBtnWebView = (Button) findViewById(R.id.btn_webview);
+
         setListeners();
 
     }
 
-    private void setListeners(){
+    private void setListeners() {
         Onclick onclick = new Onclick();
         mBtnRadioButton.setOnClickListener(onclick);
         mBtnTextView.setOnClickListener(onclick);
@@ -57,41 +60,44 @@ public class MainActivity extends AppCompatActivity {
         mBtnCheckBox.setOnClickListener(onclick);
         mBtnImageView.setOnClickListener(onclick);
         mRV.setOnClickListener(onclick);
+        mBtnWebView.setOnClickListener(onclick);
     }
 
-    private class Onclick implements View.OnClickListener{
+    private class Onclick implements View.OnClickListener {
         @Override
         public void onClick(View view) {
             Intent intent = null;
-            switch (view.getId()){
+            switch (view.getId()) {
                 case R.id.btn_textview:
-                    intent = new Intent(MainActivity.this,TextViewActivity.class);
+                    intent = new Intent(MainActivity.this, TextViewActivity.class);
                     break;
 
                 case R.id.btn_button:
-                    intent = new Intent(MainActivity.this,ButtonActivity.class);
+                    intent = new Intent(MainActivity.this, ButtonActivity.class);
                     break;
 
                 case R.id.btn_edittext:
-                    intent = new Intent(MainActivity.this,EditTextActivity.class);
+                    intent = new Intent(MainActivity.this, EditTextActivity.class);
                     break;
 
                 case R.id.btn_radiobutton:
-                    intent = new Intent(MainActivity.this,RadioButtonActivity.class);
+                    intent = new Intent(MainActivity.this, RadioButtonActivity.class);
                     break;
 
                 case R.id.btn_checkbox:
-                    intent = new Intent(MainActivity.this,CheckboxActivity.class);
+                    intent = new Intent(MainActivity.this, CheckboxActivity.class);
                     break;
 
                 case R.id.btn_imageview:
-                    intent = new Intent(MainActivity.this,ImageViewActivity.class);
+                    intent = new Intent(MainActivity.this, ImageViewActivity.class);
                     break;
 
                 case R.id.btn_recyclerview:
                     intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                     break;
-
+                case R.id.btn_webview:
+                    intent = new Intent(MainActivity.this, WebViewActivity.class);
+                    break;
             }
             startActivity(intent);
         }
