@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnImageView;
     private Button mRV;
     private Button mBtnWebView;
+    private Button mBtnToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
         mBtnWebView = (Button) findViewById(R.id.btn_webview);
 
+        mBtnToast = (Button) findViewById(R.id.btn_toast);
+
         setListeners();
 
     }
@@ -61,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnImageView.setOnClickListener(onclick);
         mRV.setOnClickListener(onclick);
         mBtnWebView.setOnClickListener(onclick);
+        mBtnToast.setOnClickListener(onclick);
     }
 
     private class Onclick implements View.OnClickListener {
@@ -97,6 +101,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_webview:
                     intent = new Intent(MainActivity.this, WebViewActivity.class);
+                    break;
+
+                case R.id.btn_toast:
+                    intent = new Intent(MainActivity.this, ToastActivity.class);
                     break;
             }
             startActivity(intent);
