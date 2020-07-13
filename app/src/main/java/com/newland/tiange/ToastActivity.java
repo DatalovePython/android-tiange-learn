@@ -27,7 +27,6 @@ public class ToastActivity extends AppCompatActivity {
         mBtnToast1 = findViewById(R.id.btn_toast_1);
         mBtnToast2 = findViewById(R.id.btn_toast_2);
         mBtnToast3 = findViewById(R.id.btn_toast_3);
-        mBtnToast3 = findViewById(R.id.btn_toast_4);
         mBtnToast4 = findViewById(R.id.btn_toast_4);
         Onclick onclick = new Onclick();
         mBtnToast1.setOnClickListener(onclick);
