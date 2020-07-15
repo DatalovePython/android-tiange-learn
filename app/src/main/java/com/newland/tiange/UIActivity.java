@@ -1,11 +1,13 @@
 package com.newland.tiange;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.newland.tiange.recyclerview.RecyclerViewActivity;
 
@@ -142,9 +144,26 @@ public class UIActivity extends AppCompatActivity {
 
                 case R.id.btn_lifecycle:
                     intent = new Intent(UIActivity.this, LifeActivity.class);
+
+                    //演示A页面的数据传递给B页面
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name","卢中川");
+                    bundle.putInt("age",18);
+                    intent.putExtras(bundle);
                     break;
             }
-            startActivity(intent);
+
+            if(view.getId()==R.id.btn_lifecycle){
+                startActivityForResult(intent,0);
+            }else {
+                startActivity(intent);
+            }
         }
+    }
+//取得下一个页面传回的数据
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(UIActivity.this, data.getExtras().getString("title"),Toast.LENGTH_LONG).show();
     }
 }
