@@ -13,33 +13,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LifeActivity extends AppCompatActivity {
 
-    private TextView mTvTitle;
-    private Button mBtnFinish;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lifecycle);
-        final Bundle bundle = getIntent().getExtras();
-        String name = bundle.getString("name");
-        int age = bundle.getInt("age");
-        mTvTitle = (TextView) findViewById(R.id.tv_title);
-        mTvTitle.setText(name + "," + age);
+
         Log.d("Lifecycle", "---onCreate---");
 
-        mBtnFinish = (Button) findViewById(R.id.btn_finish);
-        mBtnFinish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("title","我回来了");
-                intent.putExtras(bundle1);
-                setResult(Activity.RESULT_OK,intent);
-                //关闭当前页面
-                finish();
-            }
-        });
+
     }
 
     @Override
