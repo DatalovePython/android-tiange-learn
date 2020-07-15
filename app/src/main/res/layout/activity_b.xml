@@ -3,7 +3,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:orientation="vertical"
     >
 
     <TextView
@@ -20,6 +20,15 @@
         android:layout_height="wrap_content"
         android:text="finish"
         android:id="@+id/btn_finish"
+        >
+
+    </Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转到AActivity"
+        android:id="@+id/btn_finish2"
         android:layout_marginTop="20dp"
         >
 

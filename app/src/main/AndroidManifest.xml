@@ -11,8 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".jump.BActivity"></activity>
-        <activity android:name=".jump.AActivity" />
+        <activity android:name=".jump.BActivity"
+            android:label="B"
+            android:launchMode="standard"
+
+            ></activity>
+        <activity android:name=".jump.AActivity"
+            android:label="A"
+            android:launchMode="standard"
+            >
+        </activity>
         <activity android:name=".PopupWindowActivity" />
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".ProgressActivity" />

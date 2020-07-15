@@ -14,4 +14,13 @@
 
     </Button>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_jump2"
+        android:text="跳转到AActivity"
+        >
+
+    </Button>
+
 </LinearLayout>
