@@ -24,6 +24,7 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnProgress;
     private Button mBtnCustomDialog;
     private Button mBtnPopupWindow;
+    private Button mBtnLifeCycle;
 
 
     @Override
@@ -61,6 +62,8 @@ public class UIActivity extends AppCompatActivity {
 
         mBtnPopupWindow = (Button) findViewById(R.id.btn_popup_window);
 
+        mBtnLifeCycle = (Button) findViewById(R.id.btn_lifecycle);
+
         setListeners();
 
     }
@@ -80,6 +83,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnProgress.setOnClickListener(onclick);
         mBtnCustomDialog.setOnClickListener(onclick);
         mBtnPopupWindow.setOnClickListener(onclick);
+        mBtnLifeCycle.setOnClickListener(onclick);
     }
 
     private class Onclick implements View.OnClickListener {
@@ -134,6 +138,10 @@ public class UIActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_popup_window:
                     intent = new Intent(UIActivity.this, PopupWindowActivity.class);
+                    break;
+
+                case R.id.btn_lifecycle:
+                    intent = new Intent(UIActivity.this, LifeActivity.class);
                     break;
             }
             startActivity(intent);

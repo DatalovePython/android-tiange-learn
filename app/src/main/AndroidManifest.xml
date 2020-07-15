@@ -14,13 +14,21 @@
         <activity android:name=".PopupWindowActivity"></activity>
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".ProgressActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:label="SNMS"
+
+            >
+<!--设置成为默认的启动页面-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        控制显示导航栏的风格-->
+<!--        android:theme="@style/Theme.Design.NoActionBar"-->
+<!--        控制横屏或者竖屏显示-->
+<!--        android:screenOrientation="portrait"-->
         <activity android:name=".DialogActivity" />
         <activity android:name=".ToastActivity" />
         <activity android:name=".WebViewActivity" />
@@ -36,6 +44,7 @@
         <activity android:name=".ButtonActivity" />
         <activity android:name=".TextViewActivity" />
         <activity android:name=".UIActivity" />
+        <activity android:name=".LifeActivity" />
     </application>
 
 </manifest>
