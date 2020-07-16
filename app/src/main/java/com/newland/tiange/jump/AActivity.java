@@ -40,7 +40,7 @@ public class AActivity extends AppCompatActivity {
                 //演示A页面的数据传递给B页面
                 Bundle bundle = new Bundle();
                 bundle.putString("name", "卢中川");
-                bundle.putInt("age", 18);
+                bundle.putInt("age", 118);
                 intent.putExtras(bundle);
                 startActivity(intent);
 //                startActivityForResult(intent,0);

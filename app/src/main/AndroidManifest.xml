@@ -4,6 +4,19 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+<!--    启动模式：-->
+<!--    任务栈如果没有设置，则是默认的包名-->
+<!--    一个任务栈，每次activity都是新建实例-->
+<!--    android:launchMode="standard"-->
+<!--跳转目标，如果在 栈顶，则不会重新创建实例，且会调用onNewIntent()方法-->
+<!--    android:launchMode="singleTop"-->
+<!--跳转目标只要在 栈中，就会复用，且会调用onNewIntent()，且清除该activity上的所有activity-->
+<!--    android:launchMode="singleTask"-->
+<!--全局复用，不管哪个task栈，只要有就复用。每个activity占有一个新的task栈-->
+<!--    android:launchMode="singleInstance"-->
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,12 +26,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".jump.BActivity"
             android:label="B"
-            android:launchMode="standard"
+            android:launchMode="singleInstance"
 
             ></activity>
         <activity android:name=".jump.AActivity"
             android:label="A"
-            android:launchMode="standard"
+            android:launchMode="singleTop"
             >
         </activity>
         <activity android:name=".PopupWindowActivity" />

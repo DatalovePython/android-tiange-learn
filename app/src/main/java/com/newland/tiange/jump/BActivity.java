@@ -16,7 +16,7 @@ import com.newland.tiange.R;
 
 public class BActivity extends AppCompatActivity {
 
-    private Button mBtnFinish;
+    private Button mBtnFinish, mBtnFinish2;
     private TextView mTvTitle;
 
     @Override
@@ -42,11 +42,21 @@ public class BActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 Bundle bundle1 = new Bundle();
-                bundle1.putString("title","我回来了");
+                bundle1.putString("title", "我回来了");
                 intent.putExtras(bundle1);
-                setResult(Activity.RESULT_OK,intent);
+                setResult(Activity.RESULT_OK, intent);
                 //关闭当前页面
                 finish();
+            }
+        });
+
+        mBtnFinish2 = (Button) findViewById(R.id.btn_finish2);
+        mBtnFinish2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BActivity.this,AActivity.class);
+                startActivity(intent);
+
             }
         });
     }
