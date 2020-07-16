@@ -28,7 +28,8 @@ public class WebViewActivity extends AppCompatActivity {
         mWvMain.setWebChromeClient(new MyWebChromeClient());
         //可以通过js调用java本地的方法
 //        mWvMain.addJavascriptInterface();
-        mWvMain.loadUrl("https://m.baidu.com");
+//        mWvMain.loadUrl("https://m.baidu.com");
+        mWvMain.loadUrl("http://10.1.3.19:8080/sign");
     }
 
     // 以下配置可以在页面中打开其他链接页面时，为同一个activity，而不是需要调用手机内的其他浏览器

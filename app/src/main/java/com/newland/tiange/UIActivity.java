@@ -2,6 +2,7 @@ package com.newland.tiange;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.newland.tiange.fragment.ContainerActivity;
 import com.newland.tiange.jump.AActivity;
 import com.newland.tiange.recyclerview.RecyclerViewActivity;
 
@@ -29,6 +31,7 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnPopupWindow;
     private Button mBtnLifeCycle;
     private Button mBtnJump;
+    private Button mBtnFragment;
 
 
     @Override
@@ -70,6 +73,8 @@ public class UIActivity extends AppCompatActivity {
 
         mBtnJump = (Button) findViewById(R.id.btn_jump);
 
+        mBtnFragment = (Button) findViewById(R.id.btn_fragment);
+
         setListeners();
 
     }
@@ -91,6 +96,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnPopupWindow.setOnClickListener(onclick);
         mBtnLifeCycle.setOnClickListener(onclick);
         mBtnJump.setOnClickListener(onclick);
+        mBtnFragment.setOnClickListener(onclick);
     }
 
     private class Onclick implements View.OnClickListener {
@@ -153,6 +159,10 @@ public class UIActivity extends AppCompatActivity {
 
                 case R.id.btn_lifecycle:
                     intent = new Intent(UIActivity.this, LifeActivity.class);
+                    break;
+
+                case R.id.btn_fragment:
+                    intent = new Intent(UIActivity.this, ContainerActivity.class);
                     break;
 
             }
