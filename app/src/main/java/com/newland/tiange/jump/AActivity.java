@@ -42,8 +42,9 @@ public class AActivity extends AppCompatActivity {
                 bundle.putString("name", "卢中川");
                 bundle.putInt("age", 118);
                 intent.putExtras(bundle);
-                startActivity(intent);
-//                startActivityForResult(intent,0);
+//                startActivity(intent);
+                //请求码，在当前这个activity区分，标识当前的这个事件的方法
+                startActivityForResult(intent,0);
             }
         });
         mBtnJump2 = (Button) findViewById(R.id.btn_jump2);

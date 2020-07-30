@@ -2,9 +2,13 @@ package com.newland.tiange;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -39,10 +43,15 @@ public class PopupWindowActivity extends AppCompatActivity
                         ToastUtil.showMsg(PopupWindowActivity.this, "妙啊");
                     }
                 });
-                mPop = new PopupWindow(popview, mBtnPop.getWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
+
+                DisplayMetrics dm = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(dm);
+                int screenWidth = dm.widthPixels;
+                mPop = new PopupWindow(popview,screenWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
                 mPop.setOutsideTouchable(true);
                 mPop.setFocusable(true);
-                mPop.showAsDropDown(mBtnPop);
+                mPop.showAtLocation(view, Gravity.BOTTOM,0,0);
+//                mPop.showAsDropDown(mBtnPop);
             }
         });
     }

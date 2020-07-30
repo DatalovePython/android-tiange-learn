@@ -5,14 +5,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".fragment.ContainerActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".WelcomActivity"></activity>
+        <activity android:name=".fragment.ContainerActivity" />
         <activity
             android:name=".jump.BActivity"
             android:label="B"
@@ -20,7 +21,7 @@
         <activity
             android:name=".jump.AActivity"
             android:label="A"
-            android:launchMode="singleTop"></activity>
+            android:launchMode="singleTop" />
         <activity android:name=".PopupWindowActivity" />
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".ProgressActivity" />

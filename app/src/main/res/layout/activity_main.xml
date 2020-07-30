@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
 >
 
     <Button
@@ -9,6 +10,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_ui"
         android:text="UI"
+        android:textAllCaps="false"
+
+        >
+
+    </Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_snms"
+        android:text="SNMS"
         android:textAllCaps="false"
 
         >
