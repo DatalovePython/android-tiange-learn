@@ -2,6 +2,7 @@ package com.newland.tiange.datastorage;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.newland.tiange.R;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -61,8 +63,35 @@ public class FileActivity extends AppCompatActivity {
     //存储数据
     void save(String content) {
         FileOutputStream fileOutputStream = null;
+        //内部存储
+//        try {
+//            fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
+//            fileOutputStream.write(content.getBytes());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            if (fileOutputStream != null) {
+//                try {
+//                    fileOutputStream.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//        }
+        //外部存储
         try {
-            fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
+            //创建文件夹
+            File lzcdir = new File(Environment.getExternalStorageDirectory(), "lzcdir");
+            if(!lzcdir.exists()){
+                lzcdir.mkdirs();
+            }
+            //创建文件
+            File file = new File(lzcdir, fileName);
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            fileOutputStream = new FileOutputStream(file);
             fileOutputStream.write(content.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
@@ -80,8 +109,34 @@ public class FileActivity extends AppCompatActivity {
 
     String read() {
         FileInputStream fileInputStream = null;
+        //内部读取
+//        try {
+//            fileInputStream = openFileInput(fileName);
+//            byte[] buff = new byte[1024];
+//            StringBuilder sb = new StringBuilder("");
+//            int len = 0;
+//            while ((len = fileInputStream.read(buff)) > 0) {
+//                sb.append(new String(buff, 0, len));
+//            }
+//            return sb.toString();
+//
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            if (fileInputStream != null) {
+//                try {
+//                    fileInputStream.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+        //外部读取
         try {
-            fileInputStream = openFileInput(fileName);
+//            fileInputStream = openFileInput(fileName);
+            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "lzcdir", fileName);
+            fileInputStream = new FileInputStream(file);
             byte[] buff = new byte[1024];
             StringBuilder sb = new StringBuilder("");
             int len = 0;
