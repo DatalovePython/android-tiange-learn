@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.newland.tiange.datastorage.DataStorageActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtnUI;
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mBtnUI = (Button) findViewById(R.id.btn_ui);
-        mBtnSNMS = (Button) findViewById(R.id.btn_snms);
+        mBtnSNMS = (Button) findViewById(R.id.btn_file);
 
 
         Onclick onclick = new Onclick();
@@ -37,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, UIActivity.class);
                     break;
 
-                case R.id.btn_snms:
-                    intent = new Intent(MainActivity.this, WelcomActivity.class);
+                case R.id.btn_file:
+                    intent = new Intent(MainActivity.this, DataStorageActivity.class);
                     break;
             }
             startActivity(intent);

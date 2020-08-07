@@ -42,11 +42,13 @@ public class AFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //todo:建议如下，避免内存泄露
         mTvTitle = (TextView) view.findViewById(R.id.tv_titile);
-        if(getActivity()!= null){
-            mTvTitle.setText(getArguments().getString("title"));
-        }else{
 
-        }
+
+//        if(getActivity()!= null){
+//            mTvTitle.setText(getArguments().getString("title"));
+//        }else{
+//
+//        }
     }
 
     @Override
@@ -62,4 +64,7 @@ public class AFragment extends Fragment {
         //todo 取消异步
 
     }
+
+
+
 }
