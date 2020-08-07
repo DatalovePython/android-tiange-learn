@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mBtnUI = (Button) findViewById(R.id.btn_ui);
-        mBtnSNMS = (Button) findViewById(R.id.btn_file);
+        mBtnSNMS = (Button) findViewById(R.id.data_storage);
 
 
         Onclick onclick = new Onclick();
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, UIActivity.class);
                     break;
 
-                case R.id.btn_file:
+                case R.id.data_storage:
                     intent = new Intent(MainActivity.this, DataStorageActivity.class);
                     break;
             }

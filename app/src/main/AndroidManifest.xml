@@ -23,6 +23,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".datastorage.SharedPreferenceActivity"></activity>
+        <activity android:name=".datastorage.FileActivity"></activity>
         <activity android:name=".datastorage.DataStorageActivity" />
         <activity android:name=".fragment.ContainerActivity" />
         <activity

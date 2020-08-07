@@ -12,7 +12,7 @@ import com.newland.tiange.R;
 
 public class DataStorageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button mBtnSharedPreference;
+    Button mBtnSharedPreference,mFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ public class DataStorageActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_data_storage);
         mBtnSharedPreference = findViewById(R.id.btn_shared_preference);
         mBtnSharedPreference.setOnClickListener(this);
+        mFile = findViewById(R.id.btn_file);
+        mFile.setOnClickListener(this);
     }
 
 
@@ -30,6 +32,10 @@ public class DataStorageActivity extends AppCompatActivity implements View.OnCli
         switch (v.getId()){
             case R.id.btn_shared_preference:
                 intent = new Intent(DataStorageActivity.this,SharedPreferenceActivity.class);
+                break;
+
+            case R.id.btn_file:
+                intent = new Intent(DataStorageActivity.this,FileActivity.class);
                 break;
         }
         startActivity(intent);
